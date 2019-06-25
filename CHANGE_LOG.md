@@ -1,5 +1,11 @@
 # S.A.V.E - automatic backup system :: Change Log
 
+* 2019-0103: 1.5.5-3121 (Nereid) for KSP 1.6.0
+	+ Included configuration file for menu position in start screen (linuxgurugamer)
+	+ Included configuration file for exclude list (linuxgurugamer)
+	+ No backups of folders with .nobackup file
+	+ Fixed cloning of compressed  backups
+	+ Save config button
 * 2018-1230: 1.5.4-3103 (Nereid) for KSP 1.6.0
 	+ Build for KSP 1.6.0
 * 2018-1020: 1.5.3-3068 (Nereid) for KSP 1.5.1

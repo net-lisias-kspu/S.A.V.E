@@ -66,7 +66,10 @@ namespace Nereid
                if (visible)
                {
                   this.bounds = GUILayout.Window(this.GetInstanceID(), this.bounds, this.Window, TITLE, HighLogic.Skin.window);
-                  bounds.x = Screen.width - bounds.width;
+                  if (S.A.V.E.src.util.io.ConfigNodeIO.fixedWindowUpperRight)
+                     bounds.x = Screen.width - bounds.width;
+                  if (S.A.V.E.src.util.io.ConfigNodeIO.fixedWindowUpperLeft)
+                     bounds.x = 0;
                }
             }
             catch (Exception e)
@@ -400,7 +403,7 @@ namespace Nereid
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
             GUI.enabled = cloneFromBackupEnabled;
-            cloneBackups = GUILayout.Toggle(cloneBackups, "Include backups");
+            cloneBackups = GUILayout.Toggle(cloneBackups, "Including backups");
             GUI.enabled = true;
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
@@ -583,6 +586,14 @@ namespace Nereid
             String sMaxNumberOfbackups = GUILayout.TextField(config.maxNumberOfBackups.ToString(), STYLE_CONFIG_TEXTFIELD);
             GUILayout.Space(CONFIG_TEXTFIELD_RIGHT_MARGIN);
             config.maxNumberOfBackups = ParseInt(sMaxNumberOfbackups);
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("Save Config", GUI.skin.button))
+            {
+               config.Save();
+               display = DISPLAY.HIDDEN;
+            }
             GUILayout.EndHorizontal();
          }
 
