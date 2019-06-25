@@ -1,5 +1,7 @@
 # S.A.V.E - automatic backup system :: Change Log
 
+* 2018-0406: 1.5.2-3063 (Nereid) for KSP 1.4.2
+	+ KSP 1.4.2
 * 2018-0315: 1.5.1-3023 (Nereid) for KSP 1.4.1
 	+ KSP 1.4.1
 * 2018-0311: 1.5.0-3013 (Nereid) for KSP 1.4
